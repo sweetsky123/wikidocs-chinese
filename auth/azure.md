@@ -2,7 +2,7 @@
 title: Azure Active Directory
 description: 联合身份验证模块
 published: true
-date: 2022-08-31T17:01:57.649Z
+date: 2025-08-03T19:40:05+08:00
 tags: auth, module
 editor: markdown
 dateCreated: 2019-07-20T15:31:49.465Z
