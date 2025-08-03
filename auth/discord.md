@@ -21,7 +21,7 @@ https://discordapp.com/
 
 1. 在您 Wiki 的 **管理区（Administration Area）** 中，点击左侧导航栏的 **身份验证（Authentication）**。
 1. 点击 **Discord**。
-1. 输入先前复制的 **客 户 ID（Client ID）** 和 **客户密钥（Client Secret）** 值。
+1. 输入先前复制的 **客户 ID（Client ID）** 和 **客户密钥（Client Secret）** 值。
 1. 启用 **自助注册（Self-registration）** 选 项 *(除非 您计划手动授权用户)*。
 1. 选择新用户首次登录时应被分 配的组（group）。
 1. 确保在所有 **策略（strategies）** 列表中，**Discord** 旁边的复选框被选中。文本应显示该策略已 **启用（active）**。
