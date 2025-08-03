@@ -1,6 +1,6 @@
 ---
 title: Azure Active Directory
-description: Authentication Module
+description: 联合身份验证模块
 published: true
 date: 2022-08-31T17:01:57.649Z
 tags: auth, module
@@ -8,37 +8,37 @@ editor: markdown
 dateCreated: 2019-07-20T15:31:49.465Z
 ---
 
-[Azure Active Directory (Azure AD)](https://azure.microsoft.com/en-ca/services/active-directory/) is Microsoft’s cloud-based identity and access management service, which helps your employee's sign in and access resources.
+[Azure Active Directory (Azure AD)](https://azure.microsoft.com/en-ca/services/active-directory/) 是 Microsoft 的基于云的身份和权限管理服务，帮助您的员工登录并访问资源。
 
-# Setup
+# 设置
 
-## A) Copy the redirect URI
+## A) 复制重定向 URI
 
-1. In the **Administration Area** of your wiki, click on **Authentication** in the left navigation.
-1. Add a new **Azure Active Directory** auth strategy.
-1. Copy the **Redirect URI** value found under the configuration reference section. Keep this page opened. We'll come back to it later.
+1. 在您 Wiki 的 **管理区（Administration Area）** 中，点击左侧导航栏的 **身份验证（Authentication）**。
+1. 添加新的 **Microsoft Azure 活动目录（Azure Active Directory）** 联合身份验证策略。
+1. 复制 **重定向 URI（Redirect URI）** 值，该值位于配置参考部分下方。保持此页面打开。稍后我们会回来查看。
 
-## B) Create Azure AD Application
+## B) 创建 Azure AD 应用
 
-1. From the Azure Portal, open the **Azure Active Directory** resource.
-1. Click on **App registrations** in the left navigation and then click **New registration** at the top.
-1. Enter a **Name** (e.g. Wiki.js) and enter the **Redirect URI** you copied earlier.
-1. Click **Register**.
-1. Copy the **Application (client) ID**, you'll need it later.
-1. Click on **Endpoints** at the top and copy the endpoint value for **OpenID Connect metadata document** (e.g. `https://login.microsoftonline.com/YOUR_TENANT_ID/v2.0/.well-known/openid-configuration`), you'll need it later.
-1. *(Optional)* Click on **Branding** in the left navigation and enter the necessary info to make it easier for your users.
-1. Click on **Authentication** in the left navigation and enter the **Logout URL** (`https://YOUR-WIKI.DOMAIN.COM`) and make sure the **ID tokens** checkbox under **Implicit grant** is checked, then click **Save** at the top.
-1. Click on **API permissions** in the left navigation and ensure the **Microsoft Graph > User.Read** permission is listed.
-1. *(Optional)* In the **API permissions** section, you can **Grant admin consent** on behalf of all users in the directory. This will prevent the consent screen from being shown to the user the first time they login, which is often preferable in an internal organization environment.
+1. 从 Azure 门户，进入 **Microsoft Azure 活动目录（Azure Active Directory）** 资源。
+1. 点击左侧导航栏的 **应用注册（App registrations）**，然后点击顶部的 **新注册（New registration）**。
+1. 输入 **名称（Name）**（例如 Wiki.js）并输入您之前复制的 **重定向 URI（Redirect URI）**。
+1. 点击 **注册（Register）**。
+1. 复制 **应用（客户）ID（Application (client) ID）**，您稍后需要它。
+1. 点击顶部的 **端点（Endpoints）**，复制 **OpenID Connect 元数据文档（OpenID Connect metadata document）** 的 endpoint 值（例如 `https://login.microsoftonline.com/YOUR_TENANT_ID/v2.0/.well-known/openid-configuration`），稍后也需要它。
+1. *(可选)* 点击左侧导航栏的 **品牌（Branding）**，输入必要信息以方便您的用户识别。
+1. 点击左侧导航栏的 **身份验证（Authentication）**，输入 **登出 URL（Logout URL）**（`https://YOUR-WIKI.DOMAIN.COM`），并确保 **隐式权限（Implicit grant）** 下的 **ID トークン（ID tokens）** 复选框被选中，然后点击顶部的 **保存（Save）**。
+1. 点击左侧导航栏的 **API 权限（API permissions）**，确保 **Microsoft Graph > User.Read** 权限已列在其中。
+1. *(可选)* 在 **API 权限（API permissions）** 部分，您可以点击 **授予管理权限（Grant admin consent）**，代表目录中所有用户进行操作。这将避免用户首次登录时显示权限确认页面，这在内部分组织环境中通常更可取。
 
-## C) Enable the Azure AD strategy in Wiki.js
+## C) 在 Wiki.js 中启用 Azure AD 策略
 
-1. Go back to the Wiki.js administration page from step A.
-1. Enter the **Identity Metadata Endpoint** and **Client ID** values copied earlier.
-1. Enable the **Self-registration** option *(unless you plan on authorizing users manually)*.
-1. Select the **group** new users should be assigned to when they login for the first time.
-1. Make sure the checkbox next to **Azure Active Directory** in the list of strategies is checked. The text should now say that the strategy is **active**.
-1. Click **Apply** on the upper right of the page to save and apply the configuration.
+1. 返回步骤 A 中的 Wiki.js 管理页面。
+1. 输入之前复制的 **身份元数据端点（Identity Metadata Endpoint）** 和 **客户 ID（Client ID）** 值。
+1. 启用 **自助注册（Self-registation）** 选项 *(除非您计划手动授权用户)*。
+1. 选择新用户首次登录时应被分配的 **组（group）**。
+1. 确保在所有 **策略（strategies）** 列表中，**Microsoft Azure 活动目录（Azure Active Directory）** 旁边的复选框被选中。文本应显示该策是 **启用（active）**。
+1. 点击页面右上角的 **应用（Apply）** 以保存并应用配置。
 
 <img src="https://static.requarks.io/logo/azure.svg" class="align-abstopright" style="width:150px;" />
   
