@@ -5,7 +5,7 @@ published: true
 date: 2025-08-03T19:40:05+08:00
 tags: auth, module
 editor: markdown
-dateCreated: 2019-07-20T15:31:49.465Z
+dateCreated: 2025-08-03T19:40:05+08:00
 ---
 
 [Azure Active Directory (Azure AD)](https://azure.microsoft.com/en-ca/services/active-directory/) 是 Microsoft 的基于云的身份和权限管理服务，帮助您的员工登录并访问资源。
